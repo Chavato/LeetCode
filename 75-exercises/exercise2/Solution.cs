@@ -7,7 +7,8 @@ namespace exercise2
         {
             string gdr = "";
             string _base = "";
-            string[] strSplit;
+            string[] strSplit1;
+            string[] strSplit2;
 
 
             if (str1.Length >= str2.Length)
@@ -15,9 +16,13 @@ namespace exercise2
                 _base = str2;
                 for (int i = 0; i < str2.Length; i++)
                 {
-                    strSplit = str1.Split(_base);
-                    if (!strSplit.Any(str => str != ""))
+                    strSplit1 = str1.Split(_base);
+                    strSplit2 = str2.Split(_base);
+                    if (!strSplit1.Any(str => str != "") && !strSplit2.Any(str => str != ""))
+                    {
                         gdr = _base;
+                        break;
+                    }
 
                     _base = _base.Remove(_base.Length - 1);
                 }
@@ -27,9 +32,13 @@ namespace exercise2
                 _base = str1;
                 for (int i = 0; i < str1.Length; i++)
                 {
-                    strSplit = str2.Split(_base);
-                    if (!strSplit.Any(str => str != ""))
+                    strSplit1 = str1.Split(_base);
+                    strSplit2 = str2.Split(_base);
+                    if (!strSplit1.Any(str => str != "") && !strSplit2.Any(str => str != ""))
+                    {
                         gdr = _base;
+                        break;
+                    }
 
                     _base = _base.Remove(_base.Length - 1);
                 }
@@ -37,6 +46,5 @@ namespace exercise2
 
             return gdr;
         }
-
     }
 }

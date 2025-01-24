@@ -6,7 +6,7 @@ Solution solution = new Solution();
 
 var timer = new Stopwatch();
 timer.Start();
-string gcd = solution.GcdOfStrings("abc", "abcabc");
+string gcd = solution.GcdOfStrings("ABABABAB", "ABAB");
 timer.Stop();
 
 System.Console.WriteLine($"Result: {gcd}");
